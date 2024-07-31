@@ -1,0 +1,49 @@
+@{
+  Console.WriteLine("Hello elsaye elqasa");
+  Console.WriteLine(Model.Name);
+  @* foreach(var post in Model.Posts.ToList) {
+    Console.WriteLine(post.Title);
+  } *@
+}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">@Model.Name</h5>
+    <p class="card-text">Email : @Model.Email</p>
+    <p class="card-text">Age : @Model.Age</p>
+    <a href="/user/editform/@Model.Id" class="btn btn-primary">Edit</a>
+  </div>
+  @* get posts of the user *@
+
+
+
+  <h3 class="mb-4">Posts</h3>
+            @if (Model.Posts != null && Model.Posts.Count > 0)
+            {
+                @foreach (var post in Model.Posts)
+                {
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="card-title">@post.Title</h5>
+                            <p class="card-subtitle text-muted">@post.Category</p>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">@post.Body</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <div class="row">
+                                <div class="col">
+                                    <i class="bi bi-hand-thumbs-up"></i> @post.Likes Likes
+                                </div>
+                                <div class="col">
+                                    <i class="bi bi-share"></i> @post.Shares Shares
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No posts found for this user.</p>
+            }
+</div>  

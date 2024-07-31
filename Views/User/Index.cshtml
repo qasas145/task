@@ -1,0 +1,37 @@
+@model IEnumerable<Database.Models.User>
+
+@{
+    ViewData["Title"] = "Users";
+    int counter = 1;
+}
+
+    <a class="btn btn-primary" href="user/addform">Add User</a>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+@foreach(var user in Model){
+    <tr>
+        <th scope="row">@(counter++)</th>
+        <td>@(user.Id)</td>
+        <td>@(user.Name)</td>
+        <td>@(user.Age)</td>
+        <td>@(user.Email)</td>
+        <td>
+            <a href="/user/editform/@(user.Id)" class="btn-success p-1 m-1" style="text-decoration: none;">Edit </a>
+            <a href="/user/details/@(user.Id)" class="btn-primary p-1 m-1" style="text-decoration: none;">Details </a>
+            <a href="/user/delete/@(user.Id)" class="btn-danger p-1" style="text-decoration: none;">Delete</a>
+        </td>
+    </tr>
+}
+</tbody>
+</table>
