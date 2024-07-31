@@ -11,6 +11,11 @@ a {
   color: #0077cc;
 }
 
+a:hover, a:focus {
+  text-decoration: none;
+  color: #0056b3;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -40,9 +45,36 @@ button.accept-policy {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.footer h5 {
+  color: #ffffff;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.custom-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
 }
