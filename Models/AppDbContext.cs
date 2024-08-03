@@ -4,7 +4,7 @@ namespace Database.Models;
 public class AppDbContext : DbContext {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=localhost,1433;Database=Facebook;User Id= SA;Password=Hamada1020;TrustServerCertificate=True");
+        optionsBuilder.UseSqlServer("Server=database,1433;Database=Facebook;User Id= SA;Password=Hamada1020;TrustServerCertificate=True");
         base.OnConfiguring(optionsBuilder);
     }
     
